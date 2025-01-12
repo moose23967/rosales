@@ -8,7 +8,7 @@ export const creatingRoute = (baseServer: BaseServer) => {
 		({ query, database }) => {
 			database.createToken(query.identifier, query.value);
 
-			return rosalesOk(undefined);
+			return rosalesOk();
 		},
 		{
 			query: t.Object({

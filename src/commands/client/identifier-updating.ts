@@ -22,8 +22,14 @@ export const identifierUpdatingCommand: Command = {
 
 		if (!oldIdentifier || !newIdentifier) return;
 
-		await client.identifier.patch(undefined, {
+		const response = await client.identifier.patch(undefined, {
 			query: { oldIdentifier, newIdentifier },
 		});
+		const responseData = response.data;
+
+		if (!responseData) return;
+		if (responseData.type !== 'ok') return;
+
+		console.log('Updated');
 	},
 };

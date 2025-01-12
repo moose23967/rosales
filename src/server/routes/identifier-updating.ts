@@ -8,7 +8,7 @@ export const identifierUpdatingRoute = (baseServer: BaseServer) => {
 		({ query, database }) => {
 			database.updateIdentifier(query.oldIdentifier, query.newIdentifier);
 
-			return rosalesOk(undefined);
+			return rosalesOk();
 		},
 		{
 			query: t.Object({

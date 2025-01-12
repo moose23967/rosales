@@ -22,8 +22,14 @@ export const valueUpdatingCommand: Command = {
 
 		if (!identifier || !newValue) return;
 
-		await client.value.patch(undefined, {
+		const response = await client.value.patch(undefined, {
 			query: { identifier, newValue },
 		});
+		const responseData = response.data;
+
+		if (!responseData) return;
+		if (responseData.type !== 'ok') return;
+
+		console.log('Updated');
 	},
 };

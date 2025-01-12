@@ -1,15 +1,17 @@
+import { deepEquals } from 'bun';
+import { rosalesOk } from '../../common/rosales-responses';
 import type { Command } from '../../components/command';
 
 export const creatingCommand: Command = {
 	expression: 'create',
 	options: [
 		{
-			expression: '--identifier',
+			expression: '-i',
 			key: 'identifier',
 			required: true,
 		},
 		{
-			expression: '--value',
+			expression: '-v',
 			key: 'value',
 			required: true,
 		},
@@ -22,11 +24,17 @@ export const creatingCommand: Command = {
 
 		if (!identifier || !value) return;
 
-		await client.index.post(undefined, {
+		const response = await client.index.post(undefined, {
 			query: {
 				identifier,
 				value,
 			},
 		});
+		const responseData = response.data;
+
+		if (!responseData) return;
+		if (responseData.type !== 'ok') return;
+
+		console.log('Created');
 	},
 };

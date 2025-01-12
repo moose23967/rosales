@@ -8,7 +8,7 @@ export const valueUpdatingRoute = (baseServer: BaseServer) => {
 		({ query, database }) => {
 			database.updateValue(query.identifier, query.newValue);
 
-			return rosalesOk(undefined);
+			return rosalesOk();
 		},
 		{
 			query: t.Object({

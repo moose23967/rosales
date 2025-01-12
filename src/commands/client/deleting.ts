@@ -16,6 +16,14 @@ export const deletingCommand: Command = {
 
 		if (!identifier) return;
 
-		await client.index.delete(undefined, { query: { identifier } });
+		const response = await client.index.delete(undefined, {
+			query: { identifier },
+		});
+		const responseData = response.data;
+
+		if (!responseData) return;
+		if (responseData.type !== 'ok') return;
+
+		console.log('Deleted');
 	},
 };

@@ -16,6 +16,12 @@ export const readingCommand: Command = {
 
 		if (!identifier) return;
 
-		await client.index.get({ query: { identifier } });
+		const response = await client.index.get({ query: { identifier } });
+		const responseData = response.data;
+
+		if (!responseData) return;
+		if (responseData.type !== 'ok') return;
+
+		console.log(responseData);
 	},
 };

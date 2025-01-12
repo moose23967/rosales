@@ -23,7 +23,11 @@ export function rosalesResponse(
 }
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-export function rosalesOk(data: any) {
+export function rosalesOk(data?: any) {
+	if (data === undefined) {
+		return { type: 'ok' };
+	}
+
 	return rosalesResponse('ok', data);
 }
 

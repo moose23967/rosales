@@ -8,7 +8,7 @@ export const deletingRoute = (baseServer: BaseServer) => {
 		({ query, database }) => {
 			database.deleteToken(query.identifier);
 
-			return rosalesOk(undefined);
+			return rosalesOk();
 		},
 		{
 			query: t.Object({
