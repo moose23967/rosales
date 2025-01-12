@@ -4,12 +4,12 @@ export const identifierUpdatingCommand: Command = {
 	expression: 'update-identifier',
 	options: [
 		{
-			expression: '--old-identifier',
+			expression: '-o',
 			key: 'oldIdentifier',
 			required: true,
 		},
 		{
-			expression: '--new-identifier',
+			expression: '-n',
 			key: 'newIdentifier',
 			required: true,
 		},

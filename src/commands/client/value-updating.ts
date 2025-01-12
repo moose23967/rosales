@@ -4,12 +4,12 @@ export const valueUpdatingCommand: Command = {
 	expression: 'update-value',
 	options: [
 		{
-			expression: '--identifier',
+			expression: '-i',
 			key: 'identifier',
 			required: true,
 		},
 		{
-			expression: '--new-value',
+			expression: '-n',
 			key: 'newValue',
 			required: true,
 		},

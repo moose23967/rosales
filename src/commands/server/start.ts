@@ -4,7 +4,7 @@ export const startCommand: Command = {
 	expression: 'start',
 	options: [
 		{
-			expression: '--port',
+			expression: '-p',
 			key: 'port',
 			required: false,
 			defaultValue: '3000',

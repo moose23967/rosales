@@ -4,7 +4,7 @@ export const readingCommand: Command = {
 	expression: 'read',
 	options: [
 		{
-			expression: '--identifier',
+			expression: '-i',
 			key: 'identifier',
 			required: true,
 		},

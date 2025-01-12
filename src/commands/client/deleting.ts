@@ -4,7 +4,7 @@ export const deletingCommand: Command = {
 	expression: 'delete',
 	options: [
 		{
-			expression: '--identifier',
+			expression: '-i',
 			key: 'identifier',
 			required: true,
 		},
