@@ -1,9 +1,9 @@
+import { treaty } from '@elysiajs/eden';
 import { argv } from 'bun';
-import { Client } from './client';
 import { commandGroups } from './commands/groups';
 import type { Command } from './components/command';
 import type { CommandGroup } from './components/command-group';
-import { server } from './server';
+import { server, type Server } from './server';
 
 let declaredCommandGroup: CommandGroup | undefined = undefined;
 
@@ -60,7 +60,7 @@ if (declaredCommand.options) {
 	}
 }
 
-const client = new Client();
+const client = treaty<Server>('localhost:3000');
 
 await declaredCommand.callback({
 	client,

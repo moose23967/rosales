@@ -1,6 +1,6 @@
 import type { Command } from '../../components/command';
 
-export const serverStartCommand: Command = {
+export const startCommand: Command = {
 	expression: 'start',
 	options: [
 		{
